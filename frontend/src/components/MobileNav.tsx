@@ -10,11 +10,11 @@ export default function MobileNav() {
         <SheetTrigger>
             <Menu className="text-orange-500" />
         </SheetTrigger>
-        <SheetContent className="space-y-3">
+        <SheetContent className="bg-white flex flex-col p-5 py-8">
             <SheetTitle>
                 <span> Welcome to MegaBites.com!</span>
             </SheetTitle>
-            <Separator />
+            <Separator className="my-3 border-t border-gray-200" />
             <SheetDescription className="flex">
                 <Button className="flex-1 font-bold bg-orange-500">Log In</Button>
             </SheetDescription>
