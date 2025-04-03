@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Layout from "./layouts/layout";
+import Layout from "./layouts/Layout";
 
 const AppRoutes = () => {
     return(
@@ -11,4 +11,4 @@ const AppRoutes = () => {
     );
 };
 
-export default AppRoutes
+export default AppRoutes;
