@@ -1,11 +1,15 @@
 import React from 'react';
 import { AppState, Auth0Provider, User } from '@auth0/auth0-react';
+import { useCreateMyUser } from '../api/MyUserApi';
+
 
 type Props = {
     children: React.ReactNode,
 };
 
 function Auth0ProviderWithNavigate({ children }: Props) {
+    const { createUser, } = useCreateMyUser();
+    
     const domain = import.meta.env.VITE_AUTH0_DOMAIN;
     const clientId = import.meta.env.VITE_AUTH0_CLIENT_ID;
     const redirectUri = import.meta.env.VITE_AUTH0_CALLBACK_URL;
