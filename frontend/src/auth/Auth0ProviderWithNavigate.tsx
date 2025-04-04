@@ -8,7 +8,7 @@ type Props = {
 };
 
 function Auth0ProviderWithNavigate({ children }: Props) {
-    const { createUser, } = useCreateMyUser();
+    const { createUser, isPending, isError, isSuccess } = useCreateMyUser();
     
     const domain = import.meta.env.VITE_AUTH0_DOMAIN;
     const clientId = import.meta.env.VITE_AUTH0_CLIENT_ID;
@@ -20,7 +20,9 @@ function Auth0ProviderWithNavigate({ children }: Props) {
 
 
     const onRedirectCallback = (appState?: AppState, user?: User) => {
-        console.log("User", user);
+        if (user?.sub && user?.email) {
+            createUser({ auth0Id: user.sub, email: user.email });
+        }
     };
 
     return (
